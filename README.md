@@ -50,4 +50,60 @@ let arrayList3 = [1, 5, 55, 23, 55, 55, 56];
 console.log("Unique numbers:", getUniqueElements(arrayList3));
 
 ```
-###
+
+### Write a function function that checks if a given string is a palindrome (reads the same forwards and backwards) while ignoring whitespace and punctuation. 
+
+```javascript
+function isPalindrome(str) {
+    // Clean the string by removing non-alphanumeric characters and converting to lowercase
+    const cleanedStr = str.replace(/[^\w]/g, '').toLowerCase(); 
+    
+    // Split the cleaned string into an array of characters, reverse the array, and then join it back into a string
+    const reverseString = cleanedStr.split('').reverse().join('');
+    
+    // Compare the original cleaned string with its reversed version to check for palindrome
+    return cleanedStr === reverseString;
+}
+
+let stringsPalindrome = "Hello World";
+
+console.log("isPalindrome", isPalindrome(stringsPalindrome));
+```
+
+### Write a function that takes an array of objects and a key, and returns a new array sorted based on the values of that key in ascending order. 
+
+```javascript
+
+function sortByKey(arr, key)
+{
+    return arr.sort((a,b)=> a[key] - b[key])
+}
+const data = [
+    { id: 3, name: 'John', age: 30 },
+    { id: 1, name: 'Alice', age: 28 },
+    { id: 2, name: 'Bob', age: 21 }
+  ];
+  
+  console.log("sort by Key", sortByKey(data, 'age'));
+  
+  ```
+  ### Write a function deep clone function in JavaScript that creates a copy of a nested object or array without any reference to the original. 
+    <p>By using two methods together and creating a deep clone, I can serialize the object to a JSON string. I would then parse it back into a new object, thereby removing any reference to the original object. </p>
+```javascript
+function deepClone(obj)
+{
+    return JSON.parse(JSON.stringify(obj));
+}
+
+const originalObject = {
+    name: 'John',
+    age: 25,
+    address: {
+        city: 'New York',
+        country: 'USA'
+    },
+    hobbies: ['reading', 'coding']
+};
+console.log("deepclone", deepClone(originalObject));
+```
+
