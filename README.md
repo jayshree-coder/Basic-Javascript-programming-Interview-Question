@@ -7,16 +7,13 @@ It is a light-weighted programming language for developing interactive web pages
 
 ### Write a function that finds the second largest number in an array. 
 ```javascript
-    function withoutfunion(str)
-    {
-    let reverstring = "";
-    for (let i = str.length - 1; i >= 0; i--)
-    { 
-        reverstring += str[i]
-        }
-        return reverstring;
+function findSecondLargest(arr) {
+    // Sort the array in descending order
+    arr.sort((a, b) => b - a);
+    // Return the second element of the sorted array
+    return arr[1];
+}
 
-    }
-
-    let string2 ="Hello World";
-    console.log("resverse string", reversestring(string2));
+let arrayList = [1, 5, 53, 23, 54, 56];
+// Call the findSecondLargest function with arrayList as argument
+console.log("Second Largest Number", findSecondLargest(arrayList))
